@@ -11,3 +11,5 @@ Boards 모듈 생성
 Boards 컨트롤러 생성 (테스트 없이)
 > nest g controller boards --no-spec
 
+Boards 서비스 생성 (테스트 없이)
+> nest g service boards --no-spec
