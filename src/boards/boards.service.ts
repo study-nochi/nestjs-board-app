@@ -36,7 +36,13 @@ export class BoardsService {
   }
 
   deleteBoard(id: string): void {
-    this.boards = this.boards.filter((board) => board.id !== id);
+    const foundBoard = this.getBoardById(id);
+
+    if (!foundBoard) {
+      throw new NotFoundException(`Can't find Board with id ${id}`);
+    }
+
+    this.boards = this.boards.filter((board) => board.id !== foundBoard.id);
   }
 
   updateBoardStatus(id: string, status: BoardStatus): Board {
