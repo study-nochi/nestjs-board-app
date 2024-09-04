@@ -8,6 +8,10 @@ import { Board } from './board.entity';
 export class BoardsService {
   constructor(private boardRepository: BoardRepository) {}
 
+  async getAllBoards(): Promise<Board[]> {
+    return this.boardRepository.find();
+  }
+
   // getAllBoards(): Board[] {
   //   return this.boards;
   // }

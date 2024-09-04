@@ -19,6 +19,12 @@ import { BoardStatusValidationPipe } from './pipes/board-status-validation.pipe'
 export class BoardsController {
   // private 선언 시, 암묵적으로 this.boardsService가 사용이 가능하다.
   constructor(private boardsService: BoardsService) {}
+
+  @Get()
+  getAllBoards() {
+    return this.boardsService.getAllBoards();
+  }
+
   // @Get()
   // getAllBoards(): Board[] {
   //   return this.boardsService.getAllBoards();
