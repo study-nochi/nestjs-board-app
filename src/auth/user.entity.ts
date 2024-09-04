@@ -5,9 +5,11 @@ import {
   Entity,
   OneToMany,
   PrimaryGeneratedColumn,
+  Unique,
 } from 'typeorm';
 
 @Entity()
+@Unique(['username'])
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -16,5 +18,5 @@ export class User extends BaseEntity {
   username: string;
 
   @Column()
-  password: string;
+  password: string; 
 }
