@@ -19,6 +19,6 @@ export class BoardStatusValidationPipe implements PipeTransform {
   }
 
   private isStatusValid(status: any) {
-    return this.StatusOptions.some(status);
+    return this.StatusOptions.some((option) => option === status);
   }
 }
