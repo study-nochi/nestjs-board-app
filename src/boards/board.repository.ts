@@ -1,7 +1,7 @@
 import { Repository } from 'typeorm';
 import { Board } from './board.entity';
 import { CreateBoardDto } from './dto/create-board.dto';
-import { BoardStatus } from './board.model';
+import { BoardStatus } from './board-status.enum';
 
 export class BoardRepository extends Repository<Board> {
   async createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
