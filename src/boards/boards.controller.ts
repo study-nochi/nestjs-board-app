@@ -58,8 +58,8 @@ export class BoardsController {
 
   // ParseIntPipe를 사용하여 id를 number만 받음.
   @Delete('/:id')
-  deleteBoard(@Param('id', ParseIntPipe) id: number) {
-    return this.boardsService.deleteBoard(id);
+  deleteBoard(@Param('id', ParseIntPipe) id: number, @GetUser() user: User) {
+    return this.boardsService.deleteBoard(id, user);
   }
 
   // @Delete('/:id')
