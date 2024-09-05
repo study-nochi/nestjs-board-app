@@ -26,8 +26,8 @@ export class BoardsController {
   constructor(private boardsService: BoardsService) {}
 
   @Get()
-  getAllBoards() {
-    return this.boardsService.getAllBoards();
+  getAllBoards(@GetUser() user: User) {
+    return this.boardsService.getAllBoards(user);
   }
 
   // @Get()
